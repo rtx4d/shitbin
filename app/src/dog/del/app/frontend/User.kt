@@ -84,11 +84,11 @@ fun Route.user() = route("/") {
             }
             call.respondTemplate(
                 "user/login", mapOf(
-                    "title" to "Login to dogbin",
-                    "description" to "Login to dogbin",
-                    "formTitle" to "Login",
+                    "title" to "Вход на говнокод",
+                    "description" to "Вход на говнокод",
+                    "formTitle" to "Вход",
                     "secondaryLink" to "/register",
-                    "secondaryTitle" to "Register"
+                    "secondaryTitle" to "Регистрация"
                 )
             )
         }
@@ -145,11 +145,11 @@ fun Route.user() = route("/") {
         get {
             call.respondTemplate(
                 "user/login", mapOf(
-                    "title" to "Register on dogbin",
-                    "description" to "Register on dogbin",
-                    "formTitle" to "Register",
+                    "title" to "Регистрация на говнокод",
+                    "description" to "Регистрация на говнокод",
+                    "formTitle" to "Регистрация",
                     "secondaryLink" to "/login",
-                    "secondaryTitle" to "Login",
+                    "secondaryTitle" to "Вход",
                     "check_pw" to true
                 )
             )
@@ -173,8 +173,8 @@ fun Route.user() = route("/") {
 
             call.respondTemplate(
                 "user/user", mapOf(
-                    "title" to "Me",
-                    "description" to "View your profile",
+                    "title" to "Профиль",
+                    "description" to "Просмотр свеого профиля",
                     "user" to user.await(),
                     "pastes" to docs
                 )
@@ -191,8 +191,8 @@ fun Route.user() = route("/") {
                 }
                 call.respondTemplate(
                     "user/changepass", mapOf(
-                        "title" to "Change password",
-                        "description" to "Change your dogbin password"
+                        "title" to "Изменение пароля",
+                        "description" to "Изменение пароля"
                     )
                 )
             }
@@ -232,8 +232,8 @@ fun Route.user() = route("/") {
                 }
                 call.respondTemplate(
                     "user/api", mapOf(
-                        "title" to "API Credentials",
-                        "description" to "Manage your API credentials",
+                        "title" to "Настройка API",
+                        "description" to "Настройте свои параметры API",
                         "credentials" to store.suspended(readonly = true) {
                             XdApiCredential.findForUser(usr)
                                 .map { ApiCredentialDto.fromApiCredential(it, call.locale) }
@@ -252,8 +252,8 @@ fun Route.user() = route("/") {
                     }
                     call.respondTemplate(
                         "user/api_new", mapOf(
-                            "title" to "New API key",
-                            "description" to "Create a new API key"
+                            "title" to "Новый API ключ",
+                            "description" to "Создание нового API ключа"
                         )
                     )
                 }
@@ -284,8 +284,8 @@ fun Route.user() = route("/") {
                     }
                     call.respondTemplate(
                         "user/api_created", mapOf(
-                            "title" to "New API Key",
-                            "description" to "Create a new API key",
+                            "title" to "Новый API ключ",
+                            "description" to "Создание нового API ключа"
                             "cred" to NewApiCredentialDto(name, key)
                         )
                     )

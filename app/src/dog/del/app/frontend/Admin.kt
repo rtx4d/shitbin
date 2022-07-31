@@ -61,7 +61,7 @@ fun Route.admin() = route("/a") {
             }
             call.respondTemplate(
                 "config", mapOf(
-                    "title" to "Admin - Config",
+                    "title" to "Админ - Конфигурация",
                     "config" to config
                 )
             )

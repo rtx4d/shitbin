@@ -70,9 +70,9 @@ open class FrontendDocumentDto : KoinComponent, PebbleModel {
     val statsUrl: String? get() = reporter.getUrl(slug)
     val showCount: Boolean get() = reporter.showCount
     val lines get() = content?.lineCount ?: 0
-    var description = "The sexiest pastebin and url-shortener ever"
+    var description = "Самое говняное хранилище когда либо созданное в России."
         protected set
-    var title = "dogbin"
+    var title = "говнокод"
         protected set
     open val editing = false
     protected var docContent: String? = null
@@ -83,7 +83,7 @@ open class FrontendDocumentDto : KoinComponent, PebbleModel {
                 slug = document.slug
                 version = document.version
             }
-            title = "dogbin - $slug"
+            title = "говнокод - $slug"
             if (reporter.showCount) {
                 viewCount = reporter.getImpressions(slug)
             }
@@ -186,7 +186,7 @@ class EditDocumentDto : FrontendDocumentDto() {
     override suspend fun applyFrom(document: XdDocument, call: ApplicationCall?): FrontendDocumentDto {
         super.applyFrom(document, call)
 
-        title = "Editing - $slug"
+        title = "Редактирование - $slug"
 
         return this
     }

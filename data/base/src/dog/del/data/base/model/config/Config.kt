@@ -31,7 +31,7 @@ class Config(entity: Entity) : XdEntity(entity) {
 
     private fun initDefaults() {
         if ("description" !in entity.propertyNames)
-            description = "The sexiest pastebin and url-shortener ever"
+            description = "Самое говняное хранилище когда либо созданное в России."
         if ("keywords" !in entity.propertyNames)
             keywords = "pastebin,code,log,url shortener"
         if ("pasteKeyLength" !in entity.propertyNames)

@@ -1,7 +1,7 @@
 {
-  "name": "dogbin",
-  "short_name": "dogbin",
-  "description": "The sexiest pastebin and url-shortener ever.",
+  "name": "говнокод",
+  "short_name": "говнокод",
+  "description": "Самое говняное хранилище когда либо созданное в России.",
   "icons": [
     {
       "src": "/static/android-chrome-192x192.png",

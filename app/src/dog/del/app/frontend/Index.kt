@@ -32,7 +32,7 @@ fun Route.index() = route("/") {
     get {
         call.respondTemplate(
             "index", mapOf(
-                "title" to "dogbin"
+                "title" to "говнокод"
             )
         )
     }

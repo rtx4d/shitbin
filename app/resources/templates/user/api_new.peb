@@ -3,10 +3,11 @@
 {% block body %}
 <ul id="messages" class="unselectable"></ul>
 <div id="header" class="unselectable">
-    <div id="title"><a href="/">dogbin</a></div>
-    <div id="tabs">
-        <a class="tab" href="/about.md">ABOUT</a>
-        <a class="tab" href="/changelog.md">CHANGELOG</a>
+    <div id="title"><a href="/">
+        <span style="color: #ffffff;">
+          <span style="color: #cf602d;">&lt;говно</span>код/&gt;
+        </span>
+      </a>
     </div>
 </div>
 <div id="content">
@@ -16,36 +17,36 @@
             <div class="md-input">
                 <label>
                     <input name="name" placeholder=" " required>
-                    <span class="placeholder">Name</span>
+                    <span class="placeholder">Имя</span>
                 </label>
             </div>
             <div class="checkbox">
                 <input type="checkbox" id="canCreateDocuments" name="canCreateDocuments" class="checkbox__input">
-                <label for="canCreateDocuments" class="checkbox__label">Can create new Documents</label>
+                <label for="canCreateDocuments" class="checkbox__label">Создание документов</label>
             </div>
             <br>
             <div class="checkbox">
                 <input type="checkbox" id="canUpdateDocuments" name="canUpdateDocuments" class="checkbox__input">
-                <label for="canUpdateDocuments" class="checkbox__label">Can update existing Documents</label>
+                <label for="canUpdateDocuments" class="checkbox__label">Обновление документов</label>
             </div>
             <br>
             <div class="checkbox">
                 <input type="checkbox" id="canDeleteDocuments" name="canDeleteDocuments" class="checkbox__input">
-                <label for="canDeleteDocuments" class="checkbox__label">Can delete Documents</label>
+                <label for="canDeleteDocuments" class="checkbox__label">Удаление документов</label>
             </div>
             <br>
             <div class="checkbox">
                 <input type="checkbox" id="canListDocuments" name="canListDocuments" class="checkbox__input">
-                <label for="canListDocuments" class="checkbox__label">Can list Documents</label>
+                <label for="canListDocuments" class="checkbox__label">Просмотр документов</label>
             </div>
             <br>
-            <button class="md-btn right" type="submit"><span>CREATE</span></button>
+            <button class="md-btn right" type="submit"><span>СОЗДАТЬ</span></button>
         </form>
     </div>
 </div>
 <div id="footer" class="unselectable">
-    <div id="copyright">&copy; {{ year }} <a href="https://deletescape.ch" target="_blank"
-                                             rel="noopener">deletescape</a>
+    <div id="copyright">&copy; {{ year }} <a href="https://большойчлен.рф" target="_blank"
+                                             rel="noopener">/*большойчлен.рф*/</a>
     </div>
 </div>
 {% endblock %}

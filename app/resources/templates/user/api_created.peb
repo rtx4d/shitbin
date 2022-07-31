@@ -3,26 +3,27 @@
 {% block body %}
 <ul id="messages" class="unselectable"></ul>
 <div id="header" class="unselectable">
-    <div id="title"><a href="/">dogbin</a></div>
-    <div id="tabs">
-        <a class="tab" href="/about.md">ABOUT</a>
-        <a class="tab" href="/changelog.md">CHANGELOG</a>
+    <div id="title"><a href="/">
+        <span style="color: #ffffff;">
+          <span style="color: #cf602d;">&lt;говно</span>код/&gt;
+        </span>
+      </a>
     </div>
 </div>
 <div id="content">
     <div class="center-inside">
         <div class="card">
             <h1>{{ cred.name }}</h1>
-            <p><b>WARNING:</b> You will only be shown this key once, make sure to store it safely and use responsibly.
+            <p><b>ПРЕДУПРЕЖДЕНИЕ:</b> Этот ключ показывается один раз, обязательно сохраните его в безопастном месте.
             </p>
             <p>Key: <code>{{ cred.key }}</code></p>
-            <a class="md-btn md-btn-secondary left" href="/me/api"><span>BACK</span></a>
+            <a class="md-btn md-btn-secondary left" href="/me/api"><span>НАЗАД</span></a>
         </div>
     </div>
 </div>
 <div id="footer" class="unselectable">
-    <div id="copyright">&copy; {{ year }} <a href="https://deletescape.ch" target="_blank"
-                                             rel="noopener">deletescape</a>
+    <div id="copyright">&copy; {{ year }} <a href="https://большойчлен.рф" target="_blank"
+                                             rel="noopener">/*большойчлен.рф*/</a>
     </div>
 </div>
 {% endblock %}

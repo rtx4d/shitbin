@@ -3,16 +3,17 @@
 {% block body %}
 <ul id="messages" class="unselectable"></ul>
 <div id="header" class="unselectable">
-    <div id="title"><a href="/">dogbin</a></div>
-    <div id="tabs">
-        <a class="tab" href="/about.md">ABOUT</a>
-        <a class="tab" href="/changelog.md">CHANGELOG</a>
+    <div id="title"><a href="/">
+        <span style="color: #ffffff;">
+          <span style="color: #cf602d;">&lt;говно</span>код/&gt;
+        </span>
+      </a>
     </div>
 </div>
 <div id="content">
     <div class="center-inside">
         <form action="" method="post" class="card">
-            <h1>Config</h1>
+            <h1>Конфиг</h1>
             {% for item in config %}
                 <div class="md-input">
                     <label>
@@ -22,13 +23,13 @@
                     </label>
                 </div>
             {% endfor %}
-            <button class="md-btn right" type="submit"><span>SAVE</span></button>
+            <button class="md-btn right" type="submit"><span>СОХРАНИТЬ</span></button>
         </form>
     </div>
 </div>
 <div id="footer" class="unselectable">
-    <div id="copyright">&copy; {{ year }} <a href="https://deletescape.ch" target="_blank"
-                                             rel="noopener">deletescape</a>
+    <div id="copyright">&copy; {{ year }} <a href="https://большойчлен.рф" target="_blank"
+                                             rel="noopener">/*большойчлен.рф*/</a>
     </div>
 </div>
 {% endblock %}

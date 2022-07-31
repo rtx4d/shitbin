@@ -6,19 +6,14 @@ volumes:
 
 services:
   dogbin:
-    image: dogbin/dogbin
+    build: .
     restart: always
     environment:
       - SESSION_KEY=${SESSION_KEY}
       - DB_LOCATION=/dogbin.xdb
       - HOST=${HOST}
       - SIMPLEANALYTICS=${SIMPLEANALYTICS}
-      - CDN_S3_ENDPOINT=${S3_ENDPOINT}
-      - CDN_S3_ACCESS_KEY=${S3_ACCESS_KEY}
-      - CDN_S3_SECRET=${S3_SECRET}
-      - CDN_S3_SECURE=${S3_SECURE}
-      - CDN_S3_REGION=${S3_REGION}
-      - ENABLE_SCREENSHOTTER=true
+      - ENABLE_SCREENSHOTTER=false
     volumes:
       - ./dogbin.xdb:/dogbin.xdb
     ports:
@@ -28,7 +23,7 @@ services:
       - 9090
     links:
       - "highlighter:highlighter"
-      - "screenshotter:screenshotter"
+      # - "screenshotter:screenshotter"
       - "iframely:iframely"
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
@@ -38,24 +33,18 @@ services:
       timeout: 5s
       retries: 3
   highlighter:
-    image: dogbin/highlighter
+    build: microservices/highlighter
     restart: always
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
-  screenshotter:
-    image: dogbin/screenshotter
-    restart: always
-    environment:
-      - DOGBIN_HOST=http://dogbin:8080
-      - S3_ENDPOINT=${S3_ENDPOINT}
-      - S3_ACCESS_KEY=${S3_ACCESS_KEY}
-      - S3_SECRET=${S3_SECRET}
-      - S3_SECURE=${S3_SECURE}
-      - S3_REGION=${S3_REGION}
-      - S3_HOST=${CDN_S3_HOST}
-      - S3_BUCKET=${CDN_S3_BUCKET}
-    labels:
-      - "com.centurylinklabs.watchtower.enable=true"
+  # screenshotter:
+  #   build: microservices/screenshotter
+  #   image: dogbin/screenshotter
+  #   restart: always
+  #   environment:
+  #     - DOGBIN_HOST=http://dogbin:8080
+  #   labels:
+  #     - "com.centurylinklabs.watchtower.enable=true"
   iframely:
     image: dogbin/iframely
     restart: always

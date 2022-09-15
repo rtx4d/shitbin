@@ -1,5 +1,5 @@
 del.dog {
-    reverse_proxy / localhost:8080 {
+    reverse_proxy / localhost:8890 {
         header_up X-Forwarded-Ssl on
         header_up Host {host}
         header_up X-Real-IP {remote}
@@ -12,7 +12,7 @@ del.dog {
 }
 
 del.dog/r/ {
-    reverse_proxy / localhost:8083 {
+    reverse_proxy / localhost:8893 {
         header_up X-Forwarded-Ssl on
         header_up Host {host}
         header_up X-Real-IP {remote}
@@ -25,7 +25,7 @@ del.dog/r/ {
 }
 
 metrics.dogb.in {
-    reverse_proxy / localhost:8082 {
+    reverse_proxy / localhost:8892 {
         header_up X-Forwarded-Ssl on
         header_up Host {host}
         header_up X-Real-IP {remote}

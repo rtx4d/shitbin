@@ -109,8 +109,8 @@ func main() {
 			}
 		}
 	}
-	fmt.Println("~ Started listening on port 8080")
-	if err := fasthttp.ListenAndServe(":8080", highlightHandler); err != nil {
+	fmt.Println("~ Started listening on port 8890")
+	if err := fasthttp.ListenAndServe(":8890", highlightHandler); err != nil {
 		fmt.Println(err)
 	}
 }

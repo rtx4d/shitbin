@@ -285,7 +285,7 @@ fun Route.user() = route("/") {
                     call.respondTemplate(
                         "user/api_created", mapOf(
                             "title" to "Новый API ключ",
-                            "description" to "Создание нового API ключа"
+                            "description" to "Создание нового API ключа",
                             "cred" to NewApiCredentialDto(name, key)
                         )
                     )

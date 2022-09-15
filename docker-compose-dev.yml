@@ -10,7 +10,7 @@ services:
     command: --api.insecure=true --providers.docker
     ports:
       - "80:80"
-      - "8080:8080"
+      - "8890:8890"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     labels:
@@ -26,7 +26,7 @@ services:
     volumes:
       - ./dogbin.xdb:/dogbin.xdb
     expose:
-      - 8080
+      - 8890
       - 9090
     links:
       - "highlighter:highlighter"
@@ -43,7 +43,7 @@ services:
     image: dogbin/screenshotter
     restart: always
     environment:
-      - DOGBIN_HOST=http://dogbin:8080
+      - DOGBIN_HOST=http://dogbin:8890
     labels:
       - "traefik.http.routers.highlighter.rule=Host(`screenshotter.docker.localhost`)"
   iframely:

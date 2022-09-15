@@ -17,9 +17,9 @@ services:
     volumes:
       - ./dogbin.xdb:/dogbin.xdb
     ports:
-      - 127.0.0.1:8080:8080
+      - 127.0.0.1:8890:8890
     expose:
-      - 8080
+      - 8890
       - 9090
     links:
       - "highlighter:highlighter"
@@ -28,7 +28,7 @@ services:
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
     healthcheck:
-      test: ["CMD-SHELL", "wget -q --spider http://localhost:8080/ || exit 1"]
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:8890/ || exit 1"]
       interval: 5s
       timeout: 5s
       retries: 3
@@ -53,7 +53,7 @@ services:
       - HOST=iframely.docker.localhost
       - BASE_APP_URL=https://${HOST}
     ports:
-      - 127.0.0.1:8083:80
+      - 127.0.0.1:8893:80
     expose:
       - 80
     volumes:
@@ -89,7 +89,7 @@ services:
       - GF_SECURITY_ADMIN_PASSWORD=foobar
       - GF_USERS_ALLOW_SIGN_UP=false
     ports:
-      - 127.0.0.1:8082:3000
+      - 127.0.0.1:8892:3000
   node-exporter:
     image: prom/node-exporter
     volumes:
